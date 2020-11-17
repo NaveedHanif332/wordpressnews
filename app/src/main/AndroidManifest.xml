@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.itechnotion.wpnews">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+
+
+    <application
+        android:name=".notification.MyApplication"
+        android:allowBackup="true"
+        android:configChanges="orientation|screenSize"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name="com.itechnotion.wpnews.SplashActivity"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.itechnotion.wpnews.Search.SearchActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.itechnotion.wpnews.NewsDetailActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.itechnotion.wpnews.comment.CommentActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.itechnotion.wpnews.comment.AddCommentActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name="com.itechnotion.wpnews.Home.HomePageActivity"
+            android:configChanges="orientation|screenSize"/>
+        <meta-data
+            android:name="onesignal_app_id"
+            android:value="f893b120-b601-41e5-b0e3-715626efe0a3" />
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logo" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/app_main_color" />
+
+        <service
+            android:name="com.itechnotion.wpnews.notification.MyNotificationExtenderService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.itechnotion.wpnews.YoutubeActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.itechnotion.wpnews.allFeaturesNews.AllFeaturesActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <activity android:name="com.itechnotion.wpnews.BannerAdActivity" />
+        <activity android:name="com.itechnotion.wpnews.Home.ListCategoriesActivity"
+            android:configChanges="orientation|screenSize"/>
+    </application>
+
+</manifest>
